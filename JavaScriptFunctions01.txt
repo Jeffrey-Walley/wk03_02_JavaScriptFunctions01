@@ -1,0 +1,33 @@
+defining and executing 
+
+in JavaScript functions take any # of arguements regardless of their declared signature.
+   all function arguements are optional 
+
+   function add(a,b) {
+	console.log(a,b)
+}
+
+add(1); // '1,undefined'
+add(1,2,3,4,5) // '1,2'
+
+You can predefine arguments (usually when an argument is important so it can fall back on a default value)
+
+function add(a=1,b=2) {
+	console.log(a+b)
+}
+
+add(); // still prints 3
+
+arguments array creates variables that reference the arguments in the order they were passed. 
+   For functions that take an unknown number of arguments, use the arguments object.
+
+
+function add() {
+	let sum = 0;
+	for(let i = 0; i < arguments.length; i++) {
+		sum += arguments[i];
+	}
+	return sum;
+}
+	
+add(1,2,3,4,5,6,7,8);
